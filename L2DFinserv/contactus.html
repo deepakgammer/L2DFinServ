@@ -100,6 +100,35 @@
       from { text-shadow: 0 0 10px #c0c0c0, 0 0 20px #888; }
       to { text-shadow: 0 0 20px #fff, 0 0 40px #c0c0c0; }
     }
+
+    /* Mobile Navbar */
+    .menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 1rem;
+        border-radius: 6px;
+      }
+      .navbar.active .nav-links {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
@@ -162,6 +191,11 @@
         setTimeout(() => card.classList.add("show"), i * 300);
       });
     });
+
+    // Toggle mobile menu
+    function toggleMenu() {
+      document.querySelector(".navbar").classList.toggle("active");
+    }
   </script>
 </body>
 </html>
