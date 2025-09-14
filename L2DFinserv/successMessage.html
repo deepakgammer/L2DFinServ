@@ -31,6 +31,35 @@
     .nav-links a { text-decoration: none; color: #c0c0c0; transition: color 0.3s; }
     .nav-links a:hover { color: #fff; }
 
+    /* Hamburger */
+    .menu-btn {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 1rem;
+        border-radius: 6px;
+      }
+      .navbar.active .nav-links {
+        display: flex;
+      }
+    }
+
     /* Center Success Message */
     .container {
       display: flex;
@@ -89,12 +118,10 @@
     </div>
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <nav class="nav-links">
-      <a href="index.html" onclick="playHomeAnimation()">Home</a>
-      <a href="index.html">About Us</a>
-      <a href="index.html" onclick="playPartnerAnimation()">Our Banking Partners</a>
+      <a href="index.html#home">Home</a>
+      <a href="index.html#about">About Us</a>
+      <a href="index.html#banks">Our Banking Partners</a>
       <a href="contactus.html">Contact Us</a>
-
-
     </nav>
   </header>
 
@@ -105,8 +132,21 @@
     </div>
   </div>
 
-  <!-- Money Rain Script -->
+  <!-- Scripts -->
   <script>
+    // Toggle mobile menu
+    function toggleMenu() {
+      document.querySelector(".navbar").classList.toggle("active");
+    }
+
+    // Auto-close menu on link click (mobile)
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        document.querySelector(".navbar").classList.remove("active");
+      });
+    });
+
+    // Money Rain
     function createMoney() {
       const money = document.createElement("div");
       money.classList.add("money");
@@ -120,8 +160,6 @@
         money.remove();
       }, 6000);
     }
-
-    // More money spawn
     setInterval(createMoney, 150);
   </script>
 </body>
