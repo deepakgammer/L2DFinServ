@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success - L2DFinserv</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: 'Poppins', sans-serif;
+      color: #c0c0c0;
+      overflow: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background: rgba(17,17,17,0.95);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo { display: flex; align-items: center; gap: 0.5rem; font-weight: bold; font-size: 1.2rem; color: #c0c0c0; }
+    .nav-links { display: flex; gap: 1rem; }
+    .nav-links a { text-decoration: none; color: #c0c0c0; transition: color 0.3s; }
+    .nav-links a:hover { color: #fff; }
+
+    /* Center Success Message */
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 90vh;
+      flex-direction: column;
+      position: relative;
+      z-index: 2;
+    }
+
+    .typewriter {
+      font-size: 1.8rem;
+      border-right: 3px solid #c0c0c0;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(50, end) forwards, blink 0.8s infinite;
+      color: #00ff88;
+      text-align: center;
+    }
+
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Money Rain */
+    .money {
+      position: absolute;
+      top: -10%;
+      font-size: 2rem;
+      color: #00ff88;
+      animation: fall linear infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="L2DFinserv Logo" height="40">
+      <span>L2DFinserv</span>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="index.html" onclick="playHomeAnimation()">Home</a>
+      <a href="index.html">About Us</a>
+      <a href="index.html" onclick="playPartnerAnimation()">Our Banking Partners</a>
+      <a href="contactus.html">Contact Us</a>
+
+
+    </nav>
+  </header>
+
+  <!-- Success Message -->
+  <div class="container">
+    <div class="typewriter">
+      ✅ Form Submitted Successfully! Our team will reach you soon!
+    </div>
+  </div>
+
+  <!-- Money Rain Script -->
+  <script>
+    function createMoney() {
+      const money = document.createElement("div");
+      money.classList.add("money");
+      money.textContent = "💵";
+      money.style.left = Math.random() * 100 + "vw";
+      money.style.fontSize = Math.random() * 1.5 + 1 + "rem"; // Different sizes
+      money.style.animationDuration = (Math.random() * 2 + 3) + "s"; // Faster rain
+      document.body.appendChild(money);
+
+      setTimeout(() => {
+        money.remove();
+      }, 6000);
+    }
+
+    // More money spawn
+    setInterval(createMoney, 150);
+  </script>
+</body>
+</html>

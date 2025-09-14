@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L2DFinserv</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+ 
+
+  <!-- Background with shining streaks -->
+  <div class="shine-bg">
+    <div class="streak"></div>
+    <div class="streak"></div>
+    <div class="streak"></div>
+    <div class="streak"></div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/logo.png" alt="L2DFinserv Logo" height="40">
+      <span>L2DFinserv</span>
+    </div>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav class="nav-links">
+      <a href="#home" onclick="playHomeAnimation()">Home</a>
+      <a href="#about">About Us</a>
+      <a href="#banks" onclick="playPartnerAnimation()">Our Banking Partners</a>
+      <a href="contactus.html">Contact Us</a>
+
+
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <h1>The Loans We Offer</h1>
+      <div class="loan-cards">
+        <div class="card">Personal Loan</div>
+        <div class="card">Business Loan</div>
+        <div class="card">Loan Against Property</div>
+        <div class="card">Gold Loan</div>
+        <div class="card">Education Loan</div>
+        <div class="card">Vehicle Loan</div>
+      </div>
+      <button onclick="openForm()" class="btn-enquiry">Enquiry Now</button>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="about">
+    <div class="about-inner">
+      <h1>About Us – L2D FinServ</h1>
+      <p>
+        At <strong>L2D FinServ</strong>, we strongly believe that the right financial support has the power to transform lives and enable businesses to achieve sustainable growth. We are a trusted financial solutions provider offering a wide range of services including Personal Loans, Business Loans, Home Loans, and Loan Against Property.
+      </p>
+      <p>
+        Founded by <strong>Mr. Santhosh Kumar</strong>, L2D FinServ was established with a clear vision – to make borrowing simple, transparent, and accessible for everyone. With a client-centric approach, we take pride in understanding individual requirements and delivering customized financial solutions that align with long-term goals.
+      </p>
+      <p>
+        Guided by professionalism and integrity, our team of dedicated experts ensures a seamless experience for every client. Whether it is supporting personal aspirations or driving business expansion, L2D FinServ stands as a reliable and responsible financial partner.
+      </p>
+      <p>
+        At <strong>L2D FinServ</strong>, we are committed to your growth, every step of the way.
+      </p>
+      <blockquote>
+        ✨ “Shaping Futures with Smarter Loans.”
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Our Banking Partners Section -->
+  <section id="banks" class="partners">
+    <div class="partners-inner">
+      <h1>Our Banking Partners</h1>
+      <div class="partner-cards">
+        <div class="partner-card">HDFC Bank</div>
+        <div class="partner-card">Axis Bank</div>
+        <div class="partner-card">ICICI Bank</div>
+        <div class="partner-card">Indusind Bank</div>
+        <div class="partner-card">Bandhan Bank</div>
+        <div class="partner-card">Kotak Mahindra Bank</div>
+        <div class="partner-card">Yes Bank</div>
+        <div class="partner-card">IDFC FIRST Bank</div>
+        <div class="partner-card">Shriram Finance</div>
+        <div class="partner-card">Bajaj Finance</div>
+        <div class="partner-card">L&T Finance</div>
+        <div class="partner-card">Muthoot Finance</div>
+        <div class="partner-card">Cholamandalam Investment & Finance Co.</div>
+        <div class="partner-card">Tata Capital</div>
+        <div class="partner-card">Aditya Birla Finance Ltd</div>
+        <div class="partner-card">IIFL Finance</div>
+        <div class="partner-card">Piramal Finance</div>
+        <div class="partner-card">SMFG India Credit Co. Ltd</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry Form (Modal) -->
+  <div id="enquiryModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeForm()">&times;</span>
+      <h2>Enquiry Form</h2>
+    <form id="enquiryForm" onsubmit="submitEnquiry(event)">
+  <input id="name" placeholder="Name" required>
+  <input id="contact" placeholder="Contact Number" required>
+  <input id="whatsapp" placeholder="WhatsApp Number">
+
+  <select id="loanType" required>
+    <option value="">-- Select Loan Type --</option>
+    <option>Personal Loan</option>
+    <option>Business Loan</option>
+    <option>Loan Against Property</option>
+    <option>Gold Loan</option>
+    <option>Education Loan</option>
+    <option>Vehicle Loan</option>
+  </select>
+
+  <input id="loanReq" type="number" placeholder="Loan Amount (₹)" required>
+
+  <!-- Proper Radio Group -->
+  <div class="radio-group">
+    <label><input type="radio" name="income" value="Salaried"> Salaried</label>
+    <label><input type="radio" name="income" value="Self-employed"> Self-employed</label>
+  </div>
+
+  <input id="monthlyIncome" type="number" placeholder="Monthly Income (₹)" required>
+
+  <button type="submit" class="btn-submit">Submit</button>
+</form>
+
+
+    </div>
+  </div>
+
+  <!-- Contact Us Section -->
+  <section id="contact" class="contact">
+    <div class="contact-inner">
+      <h1>Contact Us</h1>
+      <p>Have questions or need financial guidance? Get in touch with us.</p>
+      
+      <div class="contact-details">
+        <div class="contact-card">
+          <h3>📞 Mobile</h3>
+          <a href="tel:+917339142698">+91 73391 42698</a>
+        </div>
+        <div class="contact-card">
+          <h3>📧 Email</h3>
+          <a href="mailto:l2dfinserv@gmail.com">l2dfinserv@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 L2DFinserv. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
