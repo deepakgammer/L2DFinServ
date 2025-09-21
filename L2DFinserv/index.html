@@ -9,8 +9,6 @@
   <script defer src="script.js"></script>
 </head>
 <body>
- 
-
   <!-- Background with shining streaks -->
   <div class="shine-bg">
     <div class="streak"></div>
@@ -31,8 +29,6 @@
       <a href="#about">About Us</a>
       <a href="#banks" onclick="playPartnerAnimation()">Our Banking Partners</a>
       <a href="contactus.html">Contact Us</a>
-
-
     </nav>
   </header>
 
@@ -106,35 +102,33 @@
     <div class="modal-content">
       <span class="close" onclick="closeForm()">&times;</span>
       <h2>Enquiry Form</h2>
-    <form id="enquiryForm" onsubmit="submitEnquiry(event)">
-  <input id="name" placeholder="Name" required>
-  <input id="contact" placeholder="Contact Number" required>
-  <input id="whatsapp" placeholder="WhatsApp Number">
+      <form id="enquiryForm" onsubmit="submitEnquiry(event)">
+        <input id="name" placeholder="Name" required>
+        <input id="contact" placeholder="Contact Number" required>
+        <input id="whatsapp" placeholder="WhatsApp Number">
 
-  <select id="loanType" required>
-    <option value="">-- Select Loan Type --</option>
-    <option>Personal Loan</option>
-    <option>Business Loan</option>
-    <option>Loan Against Property</option>
-    <option>Gold Loan</option>
-    <option>Education Loan</option>
-    <option>Vehicle Loan</option>
-  </select>
+        <select id="loanType" required>
+          <option value="">-- Select Loan Type --</option>
+          <option>Personal Loan</option>
+          <option>Business Loan</option>
+          <option>Loan Against Property</option>
+          <option>Gold Loan</option>
+          <option>Education Loan</option>
+          <option>Vehicle Loan</option>
+        </select>
 
-  <input id="loanReq" type="number" placeholder="Loan Amount (₹)" required>
+        <input id="loanReq" type="number" placeholder="Loan Amount (₹)" required>
 
-  <!-- Proper Radio Group -->
-  <div class="radio-group">
-    <label><input type="radio" name="income" value="Salaried"> Salaried</label>
-    <label><input type="radio" name="income" value="Self-employed"> Self-employed</label>
-  </div>
+        <!-- Proper Radio Group -->
+        <div class="radio-group">
+          <label><input type="radio" name="income" value="Salaried"> Salaried</label>
+          <label><input type="radio" name="income" value="Self-employed"> Self-employed</label>
+        </div>
 
-  <input id="monthlyIncome" type="number" placeholder="Monthly Income (₹)" required>
+        <input id="monthlyIncome" type="number" placeholder="Monthly Income (₹)" required>
 
-  <button type="submit" class="btn-submit">Submit</button>
-</form>
-
-
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
     </div>
   </div>
 
@@ -160,6 +154,7 @@
   <!-- Footer -->
   <footer class="footer">
     <p>© 2025 L2DFinserv. All Rights Reserved.</p>
+    <p>Made with ❤️ by <strong>DeeStudio</strong> | <a href="https://deestudio.it.com" target="_blank">🌐 deestudio.it.com</a></p>
   </footer>
 </body>
 </html>
